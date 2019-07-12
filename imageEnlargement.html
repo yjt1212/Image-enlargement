@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>图片放大实例</title>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		ul,ol,li{list-style: none;}
+
+		.wrapDiv{
+			width: 300px;
+			height: 300px;
+			background-color: #ddd;
+			margin: 20px auto;
+			border: 1px solid #f00;
+			position: relative;
+		}
+		.wrapDiv img{
+			width: 300px;
+			height: 300px;
+		}
+		.imgWrap{
+			width: 300px;
+			background-color: #ddd;
+			margin: 20px auto;
+		}
+		.imgWrap ul li{
+			width: 50px;
+			height: 50px;
+			float: left;
+			margin-left: 10px;
+			border: 1px solid #fff;
+		}
+		.imgWrap ul li img{
+			width: 50px;
+			height: 50px;
+		}
+		.imgWrap ul li:hover{
+			border: 1px solid #f00;
+		}
+		.maskDiv{
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+			opacity: 0.5;  /*opacity--透明度*/
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			cursor: pointer;
+			display: none;  /*隐藏遮罩*/
+		}
+		#localDivId{
+			width: 300px;
+			height: 300px;
+			background-color: #ddd;
+			border: 1px solid #000;
+			position: absolute;
+			top: 0;
+			right: -300px;
+			display: none;
+			overflow: hidden;
+		}
+		#localDivId img{
+			width: 900px;
+			height: 900px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+
+</head>
+<body>
+	<h1 id="h1xxx"></h1>
+	<div class="wrapDiv" id="wrapDivId">
+		<div class="maskDiv" id="maskDivId"></div>
+		<h3 id="imgLoadingId">图片正在加载中,请稍等...</h3>
+		<img id="bigImgId" />
+
+		<div id="localDivId">
+			<img id="zoomImgId" />
+		</div>
+        
+        <!-- 这里本质是一个轮播图 -->
+	</div>
+
+	<div class="imgWrap">
+		<ul id="ulId"></ul>
+	</div>
+</body>
+</html>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/detail.js"></script>
